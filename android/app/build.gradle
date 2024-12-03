@@ -77,9 +77,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.todoo"
+    namespace "com.byte9962.todoo"
     defaultConfig {
-        applicationId "com.todoo"
+        applicationId "com.byte9962.todoo"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -92,6 +92,12 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            storeFile file('@hassaankh1__todoo.jks')
+            storePassword '174666046365e6fb0546574d50e8cc8d'
+            keyAlias 'e7b08f88f38db0b54b816b18d4030169'
+            keyPassword '4e32f9bd666ffffa90e8fed5115c277b'
+        }
     }
     buildTypes {
         debug {
@@ -100,7 +106,7 @@ android {
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
